@@ -44,7 +44,9 @@
                     <div class="dropdown-divider"></div>
                      <a class="dropdown-item" href="">Verifikasi KP</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/koor/daftarkp">Lihat daftar Registrasi KP</a>
+                    <a class="dropdown-item" href="/koor/daftarkp">Daftar Registrasi KP</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/koor/daftarkp">Set Batas Kp</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="/koor/jadwalkp">Set Jadwal KP</a>
                 </div>

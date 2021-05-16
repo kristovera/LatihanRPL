@@ -41,8 +41,8 @@
                 <a class="dropdown-item" href="/koor/verifikasiSuratKet">Verifikasi Surat Keterangan</a>
                 <a class="dropdown-item" href="/koor/verifikasiPraKp">Verifikasi Pra KP</a>
                 <a class="dropdown-item" href="/koor/verifikasiKp">Verifikasi KP</a>
-                <a class="dropdown-item" href="/koor/daftarkp">Lihat daftar Registrasi KP</a>
-                <a class="dropdown-item" href="/koor/bataskp">Set Batas KP Per Tahun Akademik</a>
+                <a class="dropdown-item" href="/koor/daftarkp">Daftar Registrasi KP</a>
+                <a class="dropdown-item" href="/koor/bataskp">Set Batas KP </a>
                 <a class="dropdown-item" href="/koor/jadwalkp">Set Jadwal KP</a>
             </ul>
         

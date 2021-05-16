@@ -12,7 +12,7 @@ class DosenController extends Controller
     }
     public function home()
     {
-    	return view('dosen.home');
+    	return view('Dosen.home');
     }
     public function daftarbimbingan()
     {

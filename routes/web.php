@@ -59,10 +59,8 @@ Route::get('/mhs/ujianKp', [MahasiswaController::class ,'ujiankp']);
 
 //dosen
 Route::get('/Dosen/login', [DosenController::class,'index']);
-Route::get('/Dosen/home', [DosenController::class,'home'])->middleware(Authenticate::class);
+Route::get('/Dosen/home', [DosenController::class,'home']);
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dosen/home', function () {
-    return view('home');})->name('home');
 
     Route::get('/Dosen/daftarBimb', [DosenController::class,'daftarbimbingan']);
     Route::get('/Dosen/jadwalUjian', [DosenController::class,'jadwalujian']);

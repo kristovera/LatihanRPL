@@ -22,4 +22,22 @@ class KoorController extends Controller
         $kp = DB::table('pengajuan_kp')->get();
         return view('koor.verifikasiKp', ['kp' => $kp]);
     }
+
+    public function daftarkp()
+    {
+    	$kp = DB::table('view_kp')->where('status', '=', '1')->get();
+    	return view('koor.daftarKP', ['kp' => $kp]);
+    }
+
+    public function bataskp()
+    {
+    	$kp = DB::table('view_kp')->where('status', '=', '1')->get();
+    	return view('koor.bataskp', ['kp' => $kp]);
+    }
+    public function jadwalkp()
+    {
+    	$kp = DB::table('kpp')->where('status', '=', '1')->get();
+    	$dosen = DB::table('koor_kp')->get();
+    	return view('koor.setjadwalkp', ['kpa' => $kp, 'dosen' => $dosen]);
+    }
 }

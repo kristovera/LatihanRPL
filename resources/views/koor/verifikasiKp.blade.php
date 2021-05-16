@@ -41,19 +41,10 @@
                 <a class="dropdown-item" href="/koor/verifikasiSuratKet">Verifikasi Surat Keterangan</a>
                 <a class="dropdown-item" href="/koor/verifikasiPraKp">Verifikasi Pra KP</a>
                 <a class="dropdown-item" href="/koor/verifikasiKp">Verifikasi KP</a>
-                <a class="dropdown-item" href="/koor/daftarkp">Lihat daftar Registrasi KP</a>
-                <a class="dropdown-item" href="/koor/bataskp">Set Batas KP Per Tahun Akademik</a>
+                <a class="dropdown-item" href="/koor/daftarkp">daftar Registrasi KP</a>
+                <a class="dropdown-item" href="/koor/bataskp">Set Batas KP </a>
                 <a class="dropdown-item" href="/koor/jadwalkp">Set Jadwal KP</a>
             </ul>
-        
-    
-    
-            <form class="form-inline my-2 my-lg-0 ml-auto">
-               
-                <a href="/mhs/usermhs" class="btn text-white"><i class="fas fa-user" data-toggle="tooltip" title="User Profile"></i></a> 
-                <a href="" class="btn text-white"><i class="fas fa-sign-out-alt" data-toggle="tooltip" title="Logout"></i></a> 
-                
-            </form>
             </div>
             </div>
         </nav>
