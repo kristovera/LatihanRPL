@@ -52,7 +52,7 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="/koor/verifikasiKp">Verifikasi KP</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="">Daftar Registrasi KP</a>
+                    <a class="dropdown-item" href="/koor/daftarKP">Daftar Registrasi KP</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="">Set Batas KP</a>
                     <div class="dropdown-divider"></div>

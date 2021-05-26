@@ -40,7 +40,7 @@ class KoorController extends Controller
 
     public function daftarkp()
     {
-    	$kp = DB::table('view_kp')->where('status', '=', '1')->get();
+    	$kp = DB::table('v_batas')->get();
     	return view('koor.daftarKP', ['kp' => $kp]);
     }   
 

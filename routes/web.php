@@ -76,6 +76,8 @@ Route::group(['middleware' =>'mhs'] , function() {
     Route::get('/koor/home', [KoorController::class,'index']);
     Route::get('/koor/jadwalKp', [KoorController::class,'jadwalkp']);
 
+    Route::get('/koor/daftarKP', [KoorController::class,'daftarkp']);
+
     Route::get('/koor/batas', [KoorController::class,'formBatas']);
     Route::get('/koor/batas/editBatas/{id}', [KoorController::class,'editBatas']);
     Route::put('/koor/batas/updated/{id}', [KoorController::class,'updateBatas']);
