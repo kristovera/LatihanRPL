@@ -40,21 +40,19 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                      
-
-                        <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Layanan
-            </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/layanan/suratketerangan">Pengajuan Surat Keterangan</a>
-                <a class="dropdown-item" href="/layanan/praKp">Pengajuan Pra Kp</a>
-                <a class="dropdown-item" href="/layanan/kp">Pengajuan Kp</a>
-            </div>
-
-            </li>
-                <li class="nav-item">
-                <a class="nav-link" href="/contact" >Contact</a>
+                
+                    <li class="nav-item">
+                <a class="nav-link" href="/mhs/home" >Mahasiswa</a>
                 </li>
+                
+                <li class="nav-item">
+                <a class="nav-link" href="/dosen/home" >Dosen</a>
+                </li>
+                
+                <li class="nav-item">
+                <a class="nav-link" href="/koor/home" >Koor</a>
+                </li>
+               
                 </ul>
                 
                     
@@ -74,10 +72,20 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->name }} <span class="caret"></span> | 
+                                   
+                                    @if (auth()->user()->level == 1)
+                                        Mahasiswa
+                                     @elseif  (auth()->user()->level == 2)
+                                        Koor
+                                     @elseif  (auth()->user()->level == 3)
+                                        Dosen
+                                    @endif
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

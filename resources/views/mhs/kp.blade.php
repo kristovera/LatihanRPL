@@ -59,7 +59,7 @@
       <!-- Main Content -->
       <main>
         <div class="container-fluid mt-2">
-            <h2><i class="fas fa-file mr-2"></i>Pengajuaan KP</h2><hr>
+            <h2><i class="fas fa-file mr-2"></i>Form Pengajuaan KP</h2><hr>
 
             <!-- Form -->
             <div class="row container-fluid">
@@ -72,6 +72,7 @@
                         @endif
                     <form method="Get" action="/layanan/kp/simpanKP">
                         @csrf
+                        <h4><i class="fas fa-file mr-2"></i>Pastikan Data Anda Benar,Sebelum Di Save</h4><hr>
                      
                         <div class="form-group">
                             <label for="" class="font-weight-bold">Semester</label>
@@ -102,10 +103,13 @@
                             <label for="" class="font-weight-bold">Spesifikasi</label>
                             <input type="text" class="form-control" name="spesifikasi" id="spesifikasi"  >
                         </div>
-                        <div class="form-group">
-                                <label for="" class="label-control">Dokumen</label>
-                                <input type="file" class="form-control" aria-label="dokumen" required>
-                            </div>
+                        <form action="upload.blade.php" method="post" enctype="multipart/form-data">    
+                 
+                         <div class="form-group">
+                            <label for="" class="font-weight-bold">Dokumen</label>
+                            <input type="file" class="form-control" name="dokumen" id="dokumen" required='required' multiple >
+                            <p style="color: red">Format File yang Diperbolehkan png | pdf </p>
+                             </div>
                         <div class="form-group">
                             <label for="" class="font-weight-bold">Penguji</label>
                             <input type="text" class="form-control" name="penguji" id="penguji"  >
@@ -133,7 +137,8 @@
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                     </div>
-                   
+
+
                 </div>
             </div>
             <br>

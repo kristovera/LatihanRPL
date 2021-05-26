@@ -26,47 +26,90 @@ Route::get('/', function () {
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 return view('dashboard');})->name('dashboard');
+//Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
 
-
-
-
-
-Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
-
-Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
+//Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
 
 //dashboard
-Route::get('/mhs/login', [MahasiswaController::class,'index']);
+//Route::get('/mhs/login', [MahasiswaController::class,'index']);
 //Route::get('/tata', [CaraController::class,'index']);
-Route::get('/contact', [contactController::class,'index']);
 
 
-//mhs
-Route::get('/layanan/suratket/addMhs', [MahasiswaController::class,'tambah']);
-//Route::get('/', [MahasiswaController::class,'tambah']);
-Route::get('/layanan/suratketerangan', [MahasiswaController::class,'formSKP']);
-//Route::get('/mhs/home', [MahasiswaController::class,'home']);
-Route::get('/layanan/suratketerangan/simpanSKP', [MahasiswaController::class,'simpanSKP']);
-Route::get('/layanan/kp', [MahasiswaController::class,'formKP']);
-Route::get('/layanan/praKp', [MahasiswaController::class,'formPraKP']);
-Route::get('/layanan/praKp/simpanPraKp', [MahasiswaController::class,'simpanPraKp']);
-Route::get('/layanan/kp/simpanKP', [MahasiswaController::class,'simpanKP']);
-Route::get('/mhs/ujianKp', [MahasiswaController::class ,'ujiankp']);
+//MHS
+Route::group(['middleware' =>'mhs'] , function() {
+    Route::get('/layanan/suratket/addMhs', [MahasiswaController::class,'tambah']);
+    //Route::get('/', [MahasiswaController::class,'tambah']);
+    Route::get('/layanan/suratketerangan', [MahasiswaController::class,'formSKP']);
+    Route::get('/mhs/home', [MahasiswaController::class,'home']);
+    Route::get('/layanan/suratketerangan/simpanSKP', [MahasiswaController::class,'simpanSKP']);
+    Route::get('/layanan/kp', [MahasiswaController::class,'formKP']);
+    Route::get('/layanan/praKp', [MahasiswaController::class,'formPraKP']);
+    Route::get('/layanan/praKp/simpanPraKp', [MahasiswaController::class,'simpanPraKp']);
+    //Route::get('/layanan/kp/simpanKP', [MahasiswaController::class,'simpanKP']);
+    Route::get('/mhs/ujianKp', [MahasiswaController::class ,'ujiankp']);
+    Route::get('/contact', [contactController::class,'index']);
+
+    
+
+
+  
+    });
+    
+        //dosen
+    Route::group(['middleware' =>'dosen'] , function() {
+    
+    //Route::get('/dosen/login', [DosenController::class,'index']);
+    Route::get('/dosen/home', [DosenController::class,'home']);
+
+
+    Route::get('/dosen/daftarBimb', [DosenController::class,'daftarbimbingan']);
+    Route::get('/dosen/jadwalUjian', [DosenController::class,'jadwalujian']);
+  
+
+
+    });
+
+    //koor
+    Route::group(['middleware' =>'koor'] , function() {
+        
+
+    Route::get('/koor/home', [KoorController::class,'index']);
+    Route::get('/koor/jadwalKp', [KoorController::class,'jadwalkp']);
+
+    Route::get('/koor/batas', [KoorController::class,'formBatas']);
+    Route::get('/koor/batas/editBatas/{id}', [KoorController::class,'editBatas']);
+    Route::put('/koor/batas/updated/{id}', [KoorController::class,'updateBatas']);
+
+    Route::get('/koor/verifikasiPraKp',[KoorController::class,'formPraKp']);
+    Route::get('/koor/verifikasiPraKp/editPra/{id}',[KoorController::class,'editPraKp']);
+    Route::put('/koor/verifikasiPraKp/updated/{id}',[KoorController::class,'updatePra']);
+
+    Route::get('/koor/verifikasiSuratKet',[KoorController::class,'formSKP']);
+    Route::get('/koor/verifikasiSuratKet/editSK/{id}',[KoorController::class,'editSK']);
+    Route::put('/koor/verifikasiSuratKet/updated/{id}',[KoorController::class,'updateSK']);
+
+
+    Route::get('/koor/verifikasiKp',[KoorController::class,'formKP']);
+    Route::get('/koor/verifikasiKp/editKp/{id}',[KoorController::class,'editKP']);
+    Route::put('/koor/verifikasiKp/updated/{id}',[KoorController::class,'updateKP']);
+   
+
+
+   
+
+    Route::get('/koor/ViewUjian', [KoorController::class,'formUjian']);
+    Route::get('/koor/ViewUjian/editUjian/{id}', [KoorController::class,'editUjian']);
+    Route::put('/koor/ViewUjian/updated/{id}', [KoorController::class,'updateUjian']);
+
+
+    Route::get('/koor/jadwalUjian', [KoorController::class,'JadwalUjian']);
+    Route::get('/layanan/jadwalUjian/simpanUjian', [KoorController::class,'simpanUjian']);
+
+    Route::get('/koor/batas', [KoorController::class,'formBatas']);
+    Route::get('/layanan/batas/simpanBatas', [KoorController::class,'simpanBatas']);
 
 
 
 
 
-//dosen
-Route::get('/Dosen/login', [DosenController::class,'index']);
-Route::get('/Dosen/home', [DosenController::class,'home']);
-
-
-    Route::get('/Dosen/daftarBimb', [DosenController::class,'daftarbimbingan']);
-    Route::get('/Dosen/jadwalUjian', [DosenController::class,'jadwalujian']);
-//koor
-Route::get('/koor/home', [KoorController::class,'index']);
-
-Route::get('/koor/verifikasiPraKp',[KoorController::class,'formPraKp']);
-Route::get('/koor/verifikasiSuratKet',[KoorController::class,'formSKP']);
-Route::get('/koor/verifikasiKp',[KoorController::class,'formKP']);
+    });

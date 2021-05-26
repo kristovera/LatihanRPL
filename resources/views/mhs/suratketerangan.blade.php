@@ -1,29 +1,37 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
+<doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="/fontawesome-free/css/all.min.css">
+    <title>Surat Keterangan</title>
 
-    <!-- Link CSS -->
-    <link rel="stylesheet" href="/css/home.css">
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    
 
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <title>SIKP | Surat Keterangan</title>
-  </head>
-  <body>
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
 
     <!-- Navigasi -->
     <header>
     <nav class="navbar navbar-dark navbar-expand-lg  bg-dark">
             <div class="container-fluid">
-            <a class="navbar-brand font-weight-bold text-white" href="/dashboard">Home</a>
+            <a class="navbar-brand font-weight-bold text-white" href="/mhs/home">Home</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -63,6 +71,7 @@
       <main>
         <div class="container-fluid mt-2">
             <h2><i class="fas fa-file mr-2"></i>Pengajuan Surat Keterangan</h2><hr>
+            <h4><i class="fas fa-file mr-2"></i>Pastikan Data Anda Benar,Sebelum Di Save</h4><hr>
 
             <!-- Form -->
             <div class="row container-fluid">
@@ -112,54 +121,20 @@
                             <label for="" class="font-weight-bold">fax</label>
                             <input type="text" class="form-control" name="fax" id="fax" >
                         </div>
-                        <div class="form-group">
-                                <label for="" class="label-control">Dokumen</label>
-                                <input type="file" class="form-control" aria-label="dokumen" required>
-                            </div>
+
+                        <form action="upload.blade.php" method="post" enctype="multipart/form-data">    
+                 
+                      <div class="form-group">
+                        <label for="" class="font-weight-bold">Dokumen</label>
+                        <input type="file" class="form-control" name="dokumen" id="dokumen" required='required' multiple >
+                        <p style="color: red">Format File yang Diperbolehkan png | pdf </p>
+                    </div>
                             
                         <button type="submit" class="btn btn-primary">Submit</button>
                   
                         </form>
                         </div>
 
-                        <div class="col-md-6">
-                    <h4>Daftar Pengajuan Surat Keterangan KP</h4><hr>
-                    <table class="table table-striped">
-                        <thead>
-                          <tr>
-                            <th scope="col">No</th>
-                            <th scope="col">NIM</th>
-                            <th scope="col">Lembaga</th>
-                            <th scope="col">Tahun</th>
-                           
-                            <th scope="col">Status</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($skp as $key)
-                              <tr>
-                                <th scope="row">{{ $loop->iteration }}</th>
-                                <td>{{ $key->nim }}</td>
-                                <td>{{ $key->lembaga}}</td>
-                           
-                                <td>
-                                    {{ $key->tahun }}
-                                  
-                                </td>
-                                
-                                <td>
-                                    @if ($key->status == 0)
-                                        Belum Diterima
-                                    @else
-                                        Sudah Diterima
-                                    @endif
-                                </td>
-                              </tr>                                
-                            @endforeach
-                        </tbody>
-       
-                       
-                      </table>
                   
                 </div>
             </div>

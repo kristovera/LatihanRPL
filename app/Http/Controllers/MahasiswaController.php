@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Validator;
 
 class MahasiswaController extends Controller
 {
@@ -85,6 +86,12 @@ class MahasiswaController extends Controller
         $kp = DB::table('pengajuan_kp')->where('tanggal_ujian', '!=', '1111-11-11')->get();
         return view('ujianKp', ['kp' => $kp]);
     }
+    public function __construct()
+    {
+            $this ->middleware('auth');
+   }
+
+   
 
 
 }

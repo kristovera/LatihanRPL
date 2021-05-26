@@ -7,26 +7,31 @@ use Illuminate\Support\Facades\DB;
 
 class DosenController extends Controller
 {
-    public function index(){
-        return view('Dosen.login');
-    }
+    
     public function home()
     {
-    	return view('Dosen.home');
+    	return view('dosen.home');
     }
     public function daftarbimbingan()
     {
-          
-        $kp = DB::table('view_kp_dosen')->where('penguji', '=', session('id_koor'))->get();
+        
+        $kp = DB::table('kp1')->get();
         return view('dosen.daftarBimb', ['kp' => $kp]);
     }
 
-    public function jadwalujian()
+  
+    public function __construct()
     {
-    	
-        $kp = DB::table('pengajuan_kp')->where('penguji', '=', session('id_koor'))->get();
-        return view('dosen.jadwalUjian', ['kp' => $kp]);
-    }
+            $this ->middleware('auth');
+   }
+
+   
+   public function JadwalUjian(){
+    $ju = DB::table('jadwalujian')->get();
+    return view('dosen.jadwalUjian', ['ju' => $ju]);
+}
+
+
 
     
 

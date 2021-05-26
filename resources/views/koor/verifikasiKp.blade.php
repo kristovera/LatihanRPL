@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/css/home.css">
 
 
-    <title>SIKP | Surat Keterangan</title>
+    <title>SIKP | KOORDINATOR </title>
   </head>
   <body>
 
@@ -23,7 +23,7 @@
     <header>
     <nav class="navbar navbar-dark navbar-expand-lg  bg-dark">
             <div class="container-fluid">
-            <a class="navbar-brand font-weight-bold text-white" href="/dashboard">Home</a>
+            <a class="navbar-brand font-weight-bold text-white" href="/koor/home">Home</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -33,67 +33,92 @@
                 <li class="nav-item active">
               
                 </li>
+            
+            
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+              
+                </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Layanan
+                    Layanan 
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/koor/verifikasiSuratKet">Verifikasi Surat Keterangan</a>
                 <a class="dropdown-item" href="/koor/verifikasiPraKp">Verifikasi Pra KP</a>
-                <a class="dropdown-item" href="/koor/verifikasiKp">Verifikasi KP</a>
-                <a class="dropdown-item" href="/koor/daftarkp">daftar Registrasi KP</a>
-                <a class="dropdown-item" href="/koor/bataskp">Set Batas KP </a>
-                <a class="dropdown-item" href="/koor/jadwalkp">Set Jadwal KP</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/koor/verifikasiSuratKet">Verifikasi SK</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/koor/verifikasiKp">Verifikasi  KP</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="">Daftar Registrasi KP</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/koor/batas">Batas KP</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/koor/BatasKp">Lihat Batas KP</a>
+                    <div class="dropdown-divider"></div>
+                     <a class="dropdown-item" href="/koor/jadwalUjian">Jadwal UJian </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/koor/ViewUjian">Lihat UJian </a>
+                    <div class="dropdown-divider"></div>
+                   
+                </div>
             </ul>
+         
             </div>
-            </div>
+         
+            </div>    
+                </div>
         </nav>
     </header>
 
-    <div class="col-md-6">
+
+    
                     <h4>Daftar Pengajuan KP</h4><hr>
-                    <table class="table table-striped">
-                        <thead>
+                    <table class="table table-hover">
+                   
                           <tr>
                             <th scope="col">No</th>
+                            <th scope="col">Nim</th>
                             <th scope="col">Judul KP</th>
                             <th scope="col">Penguji</th>
                             <th scope="col">Tahun</th>
+                            <th scope="col">Dokumen</th>
                             <th scope="col">Status</th>
+                            <th scope="col">Action</th>
                           </tr>
-                        </thead>
+                      
                         <tbody>
-                        @foreach($kp as $key)
-                              <tr>
-                                <th scope="row">{{ $loop->iteration }}</th>
-                                <td>{{ $key->judul_kp }}</td>
-                                <td>
-                                    {{$key->penguji}}
-                                 
+
+                        @foreach($kp as $no=> $kp )
+                 <tr>
+                        <th scope="row"><?php echo ++$no ?></th>
+                        <td>{{ $kp->nim}}</td>
+                        <td>{{ $kp->judul_kp }}</td>
+                        <td>{{ $kp->penguji }}</td>
+                        <td>{{ $kp->tahun}}</td>
+                        <td>{{ $kp->dokumen}}</td>
+                        <td>
+                                {{$kp->status }}
+                                       
                                 </td>
-                                <td>
-                                    {{ $key->tahun }}
-                                  
-                                </td>
-                                <td>
-                                    @if ($key->status == 0)
-                                        Belum Diterima
-                                    @else
-                                        Sudah Diterima
-                                    @endif
-                                </td>
-                              </tr>                                
-                            @endforeach
-                        </tbody>
-       
                        
-                      </table>
-                  
+                        <td>
+                            <a href="/koor/verifikasiKp/editKp/{{ $kp->id }}" class="btn btn-success" data-toggle="tooltip" >Edit</i></a> 
                           
-                </div>
-            </div>
-            <br>
-    </main>
+                                              
+                        </td>
+                        </tr>
+                    </tbody>
+                    @endforeach
+                    </table>      
+         
+     
+  
+        <!-- End Pagination -->
+    </div>
+
 
   
 

@@ -23,7 +23,6 @@
     <header>
     <nav class="navbar navbar-dark navbar-expand-lg  bg-dark">
             <div class="container-fluid">
-            <a class="navbar-brand font-weight-bold text-white" href="/dosen">SIKP</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -57,31 +56,25 @@
                     <thead>
                       <tr>
                         <th scope="col">No</th>
-                        <th scope="col">Tanggal Ujian</th>
-                        <th scope="col">NIM</th>
-                        <th scope="col">Judul</th>
+                        <th scope="col">Nim</th>
+                        <th scope="col">Judul Kp</th>
+                        <th scope="col">Penguji</th>
                         <th scope="col">Tahun </th>
+                        <th scope="col">Dokumen </th>
+                        <th scope="col">Status </th>
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach($kp as $key)
+                        @foreach($kp as $k)
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
-                                <td>
-                                    {{ date('d F Y', strtotime($key->tanggal_ujian)) }}
-                                </td>
-                                <td>{{ $key->nim }}</td>
-                                <td>{{ $key->judul }}</td>
-                                <td>
-                                    {{ $key->tahun.$key->semester }}
-                                    (
-                                        @if($key->semester == 1)
-                                            {{ $key->tahun }} Ganjil
-                                        @else
-                                            {{ $key->tahun }} Genap
-                                        @endif
-                                    )
-                                </td>
+                                <td>{{ $k->nim }}</td>
+                                <td>{{ $k->judul_kp }}</td>
+                                <td>{{ $k->penguji}}</td>
+                                <td>{{ $k->tahun}}</td>
+                                <td>{{ $k->dokumen}}</td>
+                                <td>{{ $k->status}}</td>
+                            
                             </tr>                                
                         @endforeach
                     </tbody>

@@ -74,59 +74,66 @@
     </header>
 
 
-      
 
-                        
-                    <h4>Daftar Pengajuan  SK</h4><hr>
-                    <table class="table table-hover">
-                          <tr>
-                            <th scope="col">No</th>
-                            <th scope="col">Nim</th>
-                            <th scope="col">Lembaga</th>
-                            <th scope="col">Tahun </th>
-                            <th scope="col">Dokumen</th>
-                          
-                            <th scope="col">Status </th>
-                            <th scope="col">Action</th>
 
-                          </tr>
-                        </thead>
+      <!-- Main Content -->
+      <main>
+        <div class="container-fluid mt-2">
+            <h2><i class="fas fa-file mr-2"></i>Form Jadwal Ujian</h2><hr>
+
+            <!-- Form -->
+            <div class="row container-fluid">
+                <div class="col-md-6">
+                  
+                        @if(\Session::has('success'))
+                            <div class="alert alert-success mt-3">
+                                <p>{{ \Session::get('success') }}</p>
+                            </div>
+                        @endif
+                    <form method="Get" action="/layanan/JadwalUjian/simpanUjian">
+                        @csrf
+                       
                      
-                        
-                            @foreach($skp as $sk)
-                              <tr>
-                                <th scope="row">{{ $loop->iteration }}</th>
-                                <td>{{ $sk->nim }}</td>
-                                <td>{{ $sk->lembaga}}</td>
-                                <td>
-                                    {{ $sk->tahun }}
-                                  
-                                </td>
-                                <td>{{ $sk->dokumen}}</td>
-                           
-                                
-                                <td>
-                                    {{$sk->status}}
-                                </td>
-                       
-                              
-                       
-                                <td>
-                            <a href="/koor/verifikasiSuratKet/editSK/{{$sk->id}}" class="btn btn-success" data-toggle="tooltip" title="edit" >Edit</i></a> 
-                           
-                                              
-                        </td>
-                                   
-                              </tr>                                
-                            @endforeach
+                        <div class="form-group">
+                            <label for="" class="font-weight-bold">Tanggal Ujian</label>
+                            <input type="date" class="form-control" name="tanggal" id="tanggal"  >
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="font-weight-bold">Nim</label>
+                            <input type="text" class="form-control" name="nim" id="nim" >
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="" class="font-weight-bold">Judul Kp</label>
+                            <input class="form-control" class="form-control" name="judul_kp" id="judul_kp" >
+                        </div>
+                      
+                        <div class="form-group">
+                            <label for="" class="font-weight-bold">Penguji</label>
+                            <input type="text" class="form-control" name="penguji" id="penguji"  >
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="font-weight-bold">Ruang</label>
+                            <input type="text" class="form-control" name="ruang" id="ruang"  >
+                        </div>
+                            
+                      
+                        <div class="form-group">
+                            <label for="" class="font-weight-bold">Jam</label>
+                            <input type="text" class="form-control" name="jam" id="jam"  >
+                        </div>                            
+                            
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    </div>
 
-                       </tbody>
-                      </table>
-                          
+
                 </div>
             </div>
             <br>
     </main>
+
+  
 
 
     <!-- Optional JavaScript -->

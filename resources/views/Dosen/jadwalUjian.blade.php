@@ -23,7 +23,7 @@
     <header>
     <nav class="navbar navbar-dark navbar-expand-lg  bg-dark">
             <div class="container-fluid">
-            <a class="navbar-brand font-weight-bold text-white" href="/dosen">SIKP</a>
+         
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -48,48 +48,40 @@
     </header>
 
       <!-- Main Content -->
-      <main>
-        <div class="container-fluid mt-2">
-            <h2><i class="fas fa-calendar-alt mr-2"></i>Jadwal Ujian</h2>
-            <!-- Form -->
-            <div class="container-fluid">
-                <table class="table table-striped">
-                    <thead>
-                      <tr>
+      <h4>Jadwal Ujian</h4><hr>
+                    <table class="table table-hover">
+                    <tr>
                         <th scope="col">No</th>
                         <th scope="col">Tanggal Ujian</th>
                         <th scope="col">NIM</th>
-                        <th scope="col">Judul</th>
-                        <th scope="col">Tahun Akademik</th>
+                        <th scope="col">Judul KP</th>
+                        <th scope="col">Penguji</th>
+                        <th scope="col">Ruang</th>
+                        <th scope="col">Jam</th>
+                     
                       </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($kp as $key)
-                            <tr>
-                                <th scope="row">{{ $loop->iteration }}</th>
-                                <td>
-                                    {{ date('d F Y', strtotime($key->tanggal_ujian)) }}
+                        <tbody>
+
+                        @foreach($ju as $no=> $jus )
+                 <tr>
+                        <th scope="row"><?php echo ++$no ?></th>
+                        <td>
+                              {{ date('d F Y', strtotime($jus->tanggal)) }}
                                 </td>
-                                <td>{{ $key->nim }}</td>
-                                <td>{{ $key->judul }}</td>
-                                <td>
-                                    {{ $key->tahun.$key->semester }}
-                                    (
-                                        @if($key->semester == 1)
-                                            {{ $key->tahun }} Ganjil
-                                        @else
-                                            {{ $key->tahun }} Genap
-                                        @endif
-                                    )
-                                </td>
-                            </tr>                                
-                        @endforeach
+                                <td>{{ $jus->nim }}</td>
+                                <td>{{ $jus->judul_kp }}</td>
+
+                            <td>{{ $jus->penguji }}</td>
+                            <td>{{ $jus->ruang}}</td>  
+                            <td>{{ $jus->jam }}</td> 
+                          
+                            @endforeach
+
                     </tbody>
                   </table>
             </div>
                 
     </main>
-
 
 
     <!-- Optional JavaScript -->

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/css/home.css">
 
 
-    <title>SIKP | PraKP</title>
+    <title>SIKP | KOORDINATOR </title>
   </head>
   <body>
 
@@ -23,7 +23,7 @@
     <header>
     <nav class="navbar navbar-dark navbar-expand-lg  bg-dark">
             <div class="container-fluid">
-            <a class="navbar-brand font-weight-bold text-white" href="/mhs/home">Home</a>
+            <a class="navbar-brand font-weight-bold text-white" href="/koor/home">Home</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -33,36 +33,50 @@
                 <li class="nav-item active">
               
                 </li>
+            
+            
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+              
+                </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Layanan
+                    Layanan 
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/layanan/suratketerangan">Pengajuan Surat Keterangan</a>
+                <a class="dropdown-item" href="/koor/verifikasiPraKp">Verifikasi Pra KP</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/layanan/prakp">Pengajuan Pra KP</a>
+                    <a class="dropdown-item" href="/koor/verifikasiSuratKet">Verifikasi SK</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/layanan/kp">Pengajuan KP</a>
+                    <a class="dropdown-item" href="/koor/verifikasiKp">Verifikasi KP</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/layanan/ujianKP">Jadwal Ujian</a>
-                 
+                    <a class="dropdown-item" href="">Daftar Registrasi KP</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="">Set Batas KP</a>
+                    <div class="dropdown-divider"></div>
+                     <a class="dropdown-item" href="/koor/jadwalUjian">Jadwal UJian </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/koor/ViewUjian">Lihat UJian </a>
+                    <div class="dropdown-divider"></div>
+                   
                 </div>
             </ul>
-            <form class="form-inline my-2 my-lg-0 ml-auto">
-                <a href="/mhs/usermhs" class="btn text-white"><i class="fas fa-user" data-toggle="tooltip" title="User Profile"></i></a> 
-                <a href="" class="btn text-white"><i class="fas fa-sign-out-alt" data-toggle="tooltip" title="Logout"></i></a> 
-                
-            </form>
+         
             </div>
-            </div>
+         
+            </div>    
+                </div>
         </nav>
     </header>
+
+
 
       <!-- Main Content -->
       <main>
         <div class="container-fluid mt-2">
-            <h2><i class="fas fa-file mr-2"></i>Pengajuan Pra KP</h2><hr>
-            <h4><i class="fas fa-file mr-2"></i>Pastikan Data Anda Benar,Sebelum Di Save</h4><hr>
+            <h2><i class="fas fa-file mr-2"></i>Form Batas KP</h2><hr>
 
             <!-- Form -->
             <div class="row container-fluid">
@@ -73,73 +87,84 @@
                                 <p>{{ \Session::get('success') }}</p>
                             </div>
                         @endif
-                    <form method="GET" action="/layanan/praKp/simpanPraKp">
+                    <form method="Get" action="/layanan/batas/simpanBatas">
                         @csrf
+                       
                      
-                        <div class="form-group">
-                            <label for="" class="font-weight-bold">Semester</label>
-                            <select class="form-control" name="semester" id="semester">
-                                <option value="1">Gasal</option>
-                                <option value="2">Genap</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="" class="font-weight-bold">Tahun</label>
-                            <input type="text" class="form-control" name="tahun" id="tahun" >
-                        </div>
-                      
+                     
                         <div class="form-group">
                             <label for="" class="font-weight-bold">Nim</label>
                             <input type="text" class="form-control" name="nim" id="nim" >
                         </div>
-
-                        <div class="form-group">
-                            <label for="" class="font-weight-bold">Tools</label>
-                            <input class="form-control" class="form-control" name="tools" id="tools" >
-                        </div>
-                        <div class="form-group">
-                            <label for="" class="font-weight-bold">Spesifikasi</label>
-                            <input type="text" class="form-control" name="spesifikasi" id="spesifikasi"  >
-                        </div>
-                        <form action="upload.blade.php" method="post" enctype="multipart/form-data">    
-                 
-                           <div class="form-group">
-                          <label for="" class="font-weight-bold">Dokumen</label>
-                          <input type="file" class="form-control" name="dokumen" id="dokumen" required='required' multiple >
-                         <p style="color: red">Format File yang Diperbolehkan png | pdf </p>
-                          </div>
+                    
+                     
                         <div class="form-group">
                             <label for="" class="font-weight-bold">Penguji</label>
                             <input type="text" class="form-control" name="penguji" id="penguji"  >
                         </div>
                         <div class="form-group">
-                            <label for="" class="font-weight-bold">Lembaga</label>
-                            <input type="text" class="form-control" name="lembaga" id="lembaga"  >
+                            <label for="" class="font-weight-bold">Tanggal Mulai</label>
+                            <input type="date" class="form-control" name="tanggal_mulai" id="tanggal_mulai"  >
                         </div>
                             
+                      
                         <div class="form-group">
-                            <label for="" class="font-weight-bold">Pemimpin</label>
-                            <input type="text" class="form-control" name="pimpinan" id="pimpinan"  >
-                        </div>
-                        <div class="form-group">
-                            <label for="" class="font-weight-bold">Alamat</label>
-                            <input type="text" class="form-control" name="alamat" id="alamat"  >
-                        </div>
-                            
-                        <div class="form-group">
-                            <label for="" class="font-weight-bold">No Telp</label>
-                            <input type="text" class="form-control" name="notelp" id="notelp"  >
-                        </div>
-                            
+                            <label for="" class="font-weight-bold">Tanggal Akhir</label>
+                            <input type="date" class="form-control" name="tanggal_akhir" id="tanggal_akhir"  >
+                        </div>                            
                             
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                     </div>
-               
-                </div>
+                   
+                    
+       
+           
+                    <div class="col-md-6">
+            <h2><i class="fas fa-calendar-alt mr-2"></i>Set Batas Kp</h2>
+
+            <!-- Form -->
+            <div class="container-fluid">
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Nim</th>
+                        <th scope="col">Penguji</th>
+                        <th scope="col">Tanggal Mulai</th>
+                        <th scope="col">Tanggal Akhir</th>
+                        <th scope="col">Aksi</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @foreach($bt as $b)
+                       
+                          <tr>
+                            <th scope="row">{{ $loop->iteration }}</th>
+                            <td>{{ $b->nim }}</td>
+                            <td>
+                            {{ $b->penguji}}
+                            </td>
+                            <td>
+                            {{ date('d F Y', strtotime($b->tanggal_mulai)) }}</td>
+                            <td>
+                            {{ date('d F Y', strtotime($b->tanggal_akhir)) }}</td>
+                           
+                            <td>
+                            <a href="/koor/batas/editBatas/{{$b->id}}" class="btn btn-success" data-toggle="tooltip" title="edit" >Edit</i></a> 
+                            </td>
+                          </tr> 
+                        </form>                               
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
-            <br>
+                
     </main>
+
+
+
+        
 
   
 

@@ -1,9 +1,3 @@
-
-
-
-
-
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -21,30 +15,60 @@
     <link rel="stylesheet" href="/css/home.css">
 
 
+    <title>SIKP | DOSEN</title>
   </head>
   <body>
 
     <!-- Navigasi -->
     <header>
-        
-        
+    <nav class="navbar navbar-dark navbar-expand-lg  bg-dark">
+            <div class="container-fluid">
+            <a class="navbar-brand font-weight-bold text-white" href="/dosen/home">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                <a class="nav-link text-white font-weight-bold" href="/dosen/home">Home <span class="sr-only">(current)</span></a>
+              
                 </li>
                 <li class="nav-item dropdown">
+    
                 <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Layanan
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/dosen/daftarbimbingan">Daftar Bimbingan</a>
-                <a class="dropdown-item" href="/dosen/jadwalujian">Melihat Jadwal Ujian</a>
+                    <a class="dropdown-item" href="/dosen/daftarBimb">Daftar Bimbingan</a>
+                <a class="dropdown-item" href="/dosen/jadwalUjian">Melihat Jadwal Ujian</a>
             </ul>
-            <form class="form-inline my-2 my-lg-0 ml-auto">
-                <a href="" class="btn font-weight-bold text-white">Dosen</a>
-                <a href="/dosen/profile" class="btn text-white"><i class="fas fa-user" data-toggle="tooltip" title="User Profile"></i></a> 
-            </form>
+            
+            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="badge badge-light">
+                                    
+                                   
+                                    @if (auth()->user()->level == 1)
+                                        Mahasiswa
+                                     @elseif  (auth()->user()->level == 2)
+                                        Koor
+                                     @elseif  (auth()->user()->level == 3)
+                                        Dosen
+                                    @endif
+                                    </span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    
+
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
             </div>
             </div>
         </nav>

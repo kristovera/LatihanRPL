@@ -15,15 +15,15 @@
     <link rel="stylesheet" href="/css/home.css">
 
 
-    <title>SIKP | Set jadwal KP</title>
+    <title>SIKP | KOORDINATOR </title>
   </head>
   <body>
 
     <!-- Navigasi -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-success">
+    <nav class="navbar navbar-dark navbar-expand-lg  bg-dark">
             <div class="container-fluid">
-            <a class="navbar-brand font-weight-bold text-white" href="/koor">SIKP</a>
+            <a class="navbar-brand font-weight-bold text-white" href="/koor/home">Home</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -31,25 +31,47 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                <a class="nav-link text-white font-weight-bold" href="/koor/home">Home <span class="sr-only">(current)</span></a>
+              
+                </li>
+            
+            
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+              
                 </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Layanan
+                    Layanan 
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/koor/suratketerangan">Verifikasi Surat Keterangan</a>
-                <a class="dropdown-item" href="/koor/prakp">Verifikasi Pengajuan Pra KP</a>
-                <a class="dropdown-item" href="/koor/kp">Verifikasi Pengajuan KP</a>
-                <a class="dropdown-item" href="/koor/daftarkp">Daftar Registrasi KP</a>
-                <a class="dropdown-item" href="/koor/bataskp">Set Batas KP</a>
-                <a class="dropdown-item" href="/koor/jadwalkp">Set Jadwal KP</a>
+                <a class="dropdown-item" href="/koor/verifikasiPraKp">Verifikasi Pra KP</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/koor/verifikasiSuratKet">Verifikasi SK</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/koor/verifikasiKp">Verifikasi KP</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="">Daftar Registrasi KP</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="">Set Batas KP</a>
+                    <div class="dropdown-divider"></div>
+                     <a class="dropdown-item" href="/koor/jadwalUjian">Jadwal UJian </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/koor/ViewUjian">Lihat UJian </a>
+                    <div class="dropdown-divider"></div>
+                   
+                </div>
             </ul>
-          
+         
             </div>
-            </div>
+         
+            </div>    
+                </div>
         </nav>
     </header>
+
+
 
       <!-- Main Content -->
       <main>

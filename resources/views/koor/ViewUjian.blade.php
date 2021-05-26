@@ -74,59 +74,44 @@
     </header>
 
 
-      
 
-                        
-                    <h4>Daftar Pengajuan  SK</h4><hr>
+               <h4>Jadwal Ujian</h4><hr>
                     <table class="table table-hover">
-                          <tr>
-                            <th scope="col">No</th>
-                            <th scope="col">Nim</th>
-                            <th scope="col">Lembaga</th>
-                            <th scope="col">Tahun </th>
-                            <th scope="col">Dokumen</th>
-                          
-                            <th scope="col">Status </th>
-                            <th scope="col">Action</th>
+                    <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Tanggal Ujian</th>
+                        <th scope="col">NIM</th>
+                        <th scope="col">Judul KP</th>
+                        <th scope="col">Penguji</th>
+                        <th scope="col">Ruang</th>
+                        <th scope="col">Jam</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                        <tbody>
 
-                          </tr>
-                        </thead>
-                     
-                        
-                            @foreach($skp as $sk)
-                              <tr>
-                                <th scope="row">{{ $loop->iteration }}</th>
-                                <td>{{ $sk->nim }}</td>
-                                <td>{{ $sk->lembaga}}</td>
-                                <td>
-                                    {{ $sk->tahun }}
-                                  
+                        @foreach($ju as $no=> $j )
+                 <tr>
+                        <th scope="row"><?php echo ++$no ?></th>
+                        <td>
+                              {{ date('d F Y', strtotime($j->tanggal)) }}
                                 </td>
-                                <td>{{ $sk->dokumen}}</td>
-                           
-                                
-                                <td>
-                                    {{$sk->status}}
-                                </td>
-                       
-                              
-                       
-                                <td>
-                            <a href="/koor/verifikasiSuratKet/editSK/{{$sk->id}}" class="btn btn-success" data-toggle="tooltip" title="edit" >Edit</i></a> 
-                           
-                                              
-                        </td>
-                                   
-                              </tr>                                
+                                <td>{{ $j->nim }}</td>
+                                <td>{{ $j->judul_kp }}</td>
+
+                            <td>{{ $j->penguji }}</td>
+                            <td>{{ $j->ruang}}</td>  
+                            <td>{{ $j->jam }}</td> 
+                            <td>
+                            <a href="/koor/ViewUjian/editUjian/{{$j->id}}" class="btn btn-success" data-toggle="tooltip" title="edit" >Edit</i></a> 
+                            </td>
                             @endforeach
 
-                       </tbody>
-                      </table>
-                          
-                </div>
+                    </tbody>
+                  </table>
             </div>
-            <br>
+                
     </main>
+
 
 
     <!-- Optional JavaScript -->
