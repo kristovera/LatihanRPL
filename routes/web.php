@@ -46,7 +46,7 @@ Route::group(['middleware' =>'mhs'] , function() {
     Route::get('/layanan/praKp', [MahasiswaController::class,'formPraKP']);
     Route::get('/layanan/praKp/simpanPraKp', [MahasiswaController::class,'simpanPraKp']);
     //Route::get('/layanan/kp/simpanKP', [MahasiswaController::class,'simpanKP']);
-    Route::get('/mhs/ujianKp', [MahasiswaController::class ,'ujiankp']);
+   // Route::get('/layanan/ujianKP', [MahasiswaController::class ,'ujianKP']);
     Route::get('/contact', [contactController::class,'index']);
 
     

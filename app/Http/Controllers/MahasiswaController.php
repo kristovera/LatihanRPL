@@ -83,8 +83,8 @@ class MahasiswaController extends Controller
         return redirect('/layanan/kp')->with('success','Tersimpan');
     }
     public function ujianKP(){
-        $kp = DB::table('pengajuan_kp')->where('tanggal_ujian', '!=', '1111-11-11')->get();
-        return view('ujianKp', ['kp' => $kp]);
+        $ju = DB::table('jadwalujian')->get();
+        return view('mhs.ujianKP', ['ju' => $ju]);
     }
     public function __construct()
     {
