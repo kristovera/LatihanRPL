@@ -15,18 +15,18 @@
     <link rel="stylesheet" href="/css/home.css">
 
 
-    <title>SIKP | KOORDINATOR </title>
+    <title>SIKP | Dosen </title>
   </head>
   <body>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header" align="center"><h3>Edit Jadwal Ujian</h3></div>
+                <div class="card-header" align="center"><h3>Persetujuan KP</h3></div>
               
               
-                @foreach($ju as $j)
-	            <form action="/koor/ViewUjian/updated/{{ $j->id }}" method="post">
+                @foreach($j as $j)
+	            <form action="/dosen/jadwalUjian/updated/{{ $j->id }}" method="post">
 	        	{{ csrf_field() }}
                 @method('PUT')
                 <input type="hidden" name="id" value="{{ $j->id }}"> <br/>
@@ -55,19 +55,23 @@
                     
                     <div class="form-group">
                         <label for="" class="font-weight-bold">Ruang</label>
-                        <input type="text" class="form-control" name="ruang" id="ruang" value="{{ $j->ruang }}" >
+                        <input type="text" class="form-control" name="ruang" id="ruang" value="{{ $j->ruang }}" readonly>
                     </div>
                     
                     <div class="form-group">
                         <label for="" class="font-weight-bold">Jam</label>
                         <input type="text" class="form-control" name="jam" id="jam" value="{{ $j->jam }}" >
                     </div>
-                        
-                    <div class="form-group">
-                        <label for="" class="font-weight-bold">Status</label>
-                        <input type="text" class="form-control" name="status" id="status" value="{{ $j->status }}" readonly >
+
                     </div>
-                  
+                    <div class="form-group">
+                            <label for="" class="font-weight-bold">Status</label>
+                            <select class="form-control" name="status" id="status" value="{{ $j->status }}" >
+                            <option value="0">--Pilihan--</option>
+                                <option value="Tidak Setuju">Tidak Setuju</option>
+                                <option value="Setuju">Setuju</option>
+                            </select>
+                        </div>
 
                 </div>
                 

@@ -77,55 +77,38 @@
 
 
       <!-- Main Content -->
-      <main>
-        <div class="container-fluid mt-2">
-            <h2><i class="fas fa-file mr-2"></i>Form Jadwal Ujian</h2><hr>
+    
+      <h4>Jadwal Ujian</h4><hr>
+                    <table class="table table-hover">
+                    <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">NIM</th>
+                        <th scope="col">Judul KP</th>
+                        <th scope="col">Penguji</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                        <tbody>
 
-            <!-- Form -->
-            <div class="row container-fluid">
-                <div class="col-md-6">
-                  
-                        @if(\Session::has('success'))
-                            <div class="alert alert-success mt-3">
-                                <p>{{ \Session::get('success') }}</p>
-                            </div>
-                        @endif
-                    <form method="Get" action="/layanan/JadwalUjian/simpanUjian">
-                        @csrf
+                        @foreach($ju as $no=> $j )
+                 <tr>
+                        <th scope="row"><?php echo ++$no ?></th>
                        
-                     
-                        <div class="form-group">
-                            <label for="" class="font-weight-bold">Tanggal Ujian</label>
-                            <input type="date" class="form-control" name="tanggal" id="tanggal"  >
-                        </div>
-                        <div class="form-group">
-                            <label for="" class="font-weight-bold">Nim</label>
-                            <input type="text" class="form-control" name="nim" id="nim" >
-                        </div>
-                    
-                        <div class="form-group">
-                            <label for="" class="font-weight-bold">Judul Kp</label>
-                            <input class="form-control" class="form-control" name="judul_kp" id="judul_kp" >
-                        </div>
-                      
-                        <div class="form-group">
-                            <label for="" class="font-weight-bold">Penguji</label>
-                            <input type="text" class="form-control" name="penguji" id="penguji"  >
-                        </div>
-                        <div class="form-group">
-                            <label for="" class="font-weight-bold">Ruang</label>
-                            <input type="text" class="form-control" name="ruang" id="ruang"  >
-                        </div>
-                            
-                      
-                        <div class="form-group">
-                            <label for="" class="font-weight-bold">Jam</label>
-                            <input type="text" class="form-control" name="jam" id="jam"  >
-                        </div>                            
-                            
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                    </div>
+                                <td>{{ $j->nim }}</td>
+                                <td>{{ $j->judul_kp }}</td>
+
+                            <td>{{ $j->penguji }}</td>
+                            <td>{{ $j->status }}</td>
+                            <td>
+                            <a href="/koor/ViewUjian/editUjian/{{$j->id}}" class="btn btn-success" data-toggle="tooltip" title="edit" >Edit</i></a> 
+                            </td>
+                            @endforeach
+
+                    </tbody>
+                  </table>
+            </div>
+                
+    </main>
 
 
                 </div>

@@ -64,6 +64,8 @@ Route::group(['middleware' =>'mhs'] , function() {
 
     Route::get('/dosen/daftarBimb', [DosenController::class,'daftarbimbingan']);
     Route::get('/dosen/jadwalUjian', [DosenController::class,'jadwalujian']);
+    Route::get('/dosen/jadwalUjian/editUjian/{id}', [DosenController::class,'editUjian']);
+    Route::put('/dosen/jadwalUjian/updated/{id}', [DosenController::class,'updateUjian']);
   
 
 

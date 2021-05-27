@@ -151,7 +151,8 @@ public function simpanUjian(Request $request){
       'judul_kp'=> $request->judul_kp,
       'penguji'=>$request->penguji,
       'ruang'=>$request->ruang,
-      'jam'=> $request->jam
+      'jam'=> $request->jam,
+      'status'=> $request->status
     ]);
     return redirect('/koor/jadwalUjian')->with('status', 'Tersimpan');
 }

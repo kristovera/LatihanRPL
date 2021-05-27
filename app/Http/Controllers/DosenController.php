@@ -27,8 +27,31 @@ class DosenController extends Controller
 
    
    public function JadwalUjian(){
-    $ju = DB::table('jadwalujian')->get();
-    return view('dosen.jadwalUjian', ['ju' => $ju]);
+    $j = DB::table('jadwalujian')->get();
+    return view('dosen.jadwalUjian', ['j' => $j]);
+}
+
+     public function editUjian($id)
+{
+    $j = DB::table('jadwalujian')->where('id',$id)->get();
+    return view('dosen.editUjian',['j' =>$j]);
+
+}
+    public function updateUjian($id, Request $request) {
+
+  DB::table('jadwalujian')->where('id',$id)
+  ->update([
+  'tanggal'=> $request->tanggal,
+  'nim'=>$request->nim,
+  'judul_kp'=> $request->judul_kp,
+  'penguji'=>$request->penguji,
+  'ruang'=>$request->ruang,
+  'jam'=> $request->jam,
+  'status' => $request->status
+ 
+  ]);
+  return redirect('dosen/jadwalUjian')->with('status', 'Berhasil diupdate!');
+
 }
 
 

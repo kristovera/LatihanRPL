@@ -85,6 +85,7 @@
                         <th scope="col">Penguji</th>
                         <th scope="col">Ruang</th>
                         <th scope="col">Jam</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Action</th>
                       </tr>
                         <tbody>
@@ -101,6 +102,7 @@
                             <td>{{ $j->penguji }}</td>
                             <td>{{ $j->ruang}}</td>  
                             <td>{{ $j->jam }}</td> 
+                            <td>{{ $j->status}}</td> 
                             <td>
                             <a href="/koor/ViewUjian/editUjian/{{$j->id}}" class="btn btn-success" data-toggle="tooltip" title="edit" >Edit</i></a> 
                             </td>

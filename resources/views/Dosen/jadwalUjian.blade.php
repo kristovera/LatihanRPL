@@ -58,22 +58,28 @@
                         <th scope="col">Penguji</th>
                         <th scope="col">Ruang</th>
                         <th scope="col">Jam</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Aksi</th>
                      
                       </tr>
                         <tbody>
 
-                        @foreach($ju as $no=> $jus )
+                        @foreach($j as $no=> $j )
                  <tr>
                         <th scope="row"><?php echo ++$no ?></th>
                         <td>
-                              {{ date('d F Y', strtotime($jus->tanggal)) }}
+                              {{ date('d F Y', strtotime($j->tanggal)) }}
                                 </td>
-                                <td>{{ $jus->nim }}</td>
-                                <td>{{ $jus->judul_kp }}</td>
+                                <td>{{ $j->nim }}</td>
+                                <td>{{ $j->judul_kp }}</td>
 
-                            <td>{{ $jus->penguji }}</td>
-                            <td>{{ $jus->ruang}}</td>  
-                            <td>{{ $jus->jam }}</td> 
+                            <td>{{ $j->penguji }}</td>
+                            <td>{{ $j->ruang}}</td>  
+                            <td>{{ $j->jam }}</td> 
+                            <td>{{ $j->status}}</td> 
+                            <td>
+                            <a href="/dosen/jadwalUjian/editUjian/{{$j->id}}" class="btn btn-success" data-toggle="tooltip" title="edit" >Edit</i></a> 
+                            </td>
                           
                             @endforeach
 
