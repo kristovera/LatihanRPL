@@ -77,14 +77,7 @@
 
         </div>
         <h4> 
-            Note : 
-            </br>
-                    Mhs - @si.ukdw.ac.id
-                    </br>
-                    Dosen - @staff.ukdw.ac.id
-                    </br>
-                    Koor - @gmail.com
-                    </h4>
+          
 
 
         <div class="block mt-4">

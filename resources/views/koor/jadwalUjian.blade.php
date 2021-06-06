@@ -101,6 +101,7 @@
                             <td>{{ $j->status }}</td>
                             <td>
                             <a href="/koor/ViewUjian/editUjian/{{$j->id}}" class="btn btn-success" data-toggle="tooltip" title="edit" >Edit</i></a> 
+
                             </td>
                             @endforeach
 

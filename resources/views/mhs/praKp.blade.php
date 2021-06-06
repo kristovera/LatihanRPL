@@ -48,11 +48,7 @@
                  
                 </div>
             </ul>
-            <form class="form-inline my-2 my-lg-0 ml-auto">
-                <a href="/mhs/usermhs" class="btn text-white"><i class="fas fa-user" data-toggle="tooltip" title="User Profile"></i></a> 
-                <a href="" class="btn text-white"><i class="fas fa-sign-out-alt" data-toggle="tooltip" title="Logout"></i></a> 
-                
-            </form>
+          
             </div>
             </div>
         </nav>
@@ -62,7 +58,7 @@
       <main>
         <div class="container-fluid mt-2">
             <h2><i class="fas fa-file mr-2"></i>Pengajuan Pra KP</h2><hr>
-            <h4><i class="fas fa-file mr-2"></i>Pastikan Data Anda Benar,Sebelum Di Save</h4><hr>
+           
 
             <!-- Form -->
             <div class="row container-fluid">

@@ -48,9 +48,17 @@
 
       <!-- Main Content -->
       <main>
+      
         <div class="container-fluid mt-2">
             <h2><i class="fas fa-user mr-2"></i>Daftar Bimbingan KP</h2>
+            </br>
             <!-- Form -->
+            <form class="form-inline my-2 my-lg-0 ml-auto" method="GET" action="/dosen/daftarBimb/search">
+                        <h4 class="mt-2 mr-3 text-muted">Search</h4>
+                        <input class="form-control mr-sm-2" type="search" name="q" value="@php echo old('cari') @endphp"  placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" data-toggle="tooltip" title="Search">Cari<i class="fas fa-search" ></i></button>
+                    </form>
+                    </br>
             <div class="container-fluid">
                 <table class="table table-striped">
                     <thead>
@@ -82,6 +90,7 @@
             </div>
                 
     </main>
+ 
 
 
 

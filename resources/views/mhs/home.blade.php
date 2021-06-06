@@ -47,13 +47,18 @@
                 <a class="dropdown-item" href="/layanan/prakp">Pengajuan Pra Kp</a>
                 <a class="dropdown-item" href="/layanan/kp">Pengajuan Kp</a>
                 <a class="dropdown-item" href="/layanan/ujianKP">Jadwal Ujian</a>
-            </div>
+                <a class="dropdown-item" href="/layanan/verifKp">Verifikasi Kp</a>
+                <a class="dropdown-item" href="/layanan/verifPra">Verifikasi Pra</a>
+                <a class="dropdown-item" href="/layanan/verifSK">Verifikasi SK</a>
 
+            </div>
+             
             </li>
                 <li class="nav-item">
                 <a class="nav-link" href="/contact" >Contact</a>
                 </li>
                 </ul>
+                
                 
                     
 

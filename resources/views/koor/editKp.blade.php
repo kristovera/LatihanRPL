@@ -58,6 +58,11 @@
                     <label for="" class="font-weight-bold">Dokumen</label>
                     <input type="text" class="form-control" name="dokumen" id="dokumen" required='required' value="{{ $k->dokumen}}" readonly>
                     </div>
+                    
+                    <div class="form-group">
+                            <label for="" class="font-weight-bold">Pembimbing</label>
+                            <input type="text" class="form-control" name="pembimbing" id="pembimbing" value="{{ $k->pembimbing}}"   >
+                        </div>
                         
                         <div class="form-group">
                             <label for="" class="font-weight-bold">Status</label>

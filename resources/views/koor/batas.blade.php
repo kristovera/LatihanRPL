@@ -90,18 +90,12 @@
                     <form method="Get" action="/layanan/batas/simpanBatas">
                         @csrf
                        
-                     
-                     
                         <div class="form-group">
                             <label for="" class="font-weight-bold">Nim</label>
                             <input type="text" class="form-control" name="nim" id="nim" >
                         </div>
                     
                      
-                        <div class="form-group">
-                            <label for="" class="font-weight-bold">Penguji</label>
-                            <input type="text" class="form-control" name="penguji" id="penguji"  >
-                        </div>
                         <div class="form-group">
                             <label for="" class="font-weight-bold">Tanggal Mulai</label>
                             <input type="date" class="form-control" name="tanggal_mulai" id="tanggal_mulai"  >
@@ -129,8 +123,9 @@
                     <thead>
                       <tr>
                         <th scope="col">No</th>
+                      
                         <th scope="col">Nim</th>
-                        <th scope="col">Penguji</th>
+                      
                         <th scope="col">Tanggal Mulai</th>
                         <th scope="col">Tanggal Akhir</th>
                         <th scope="col">Aksi</th>
@@ -141,10 +136,9 @@
                        
                           <tr>
                             <th scope="row">{{ $loop->iteration }}</th>
+                          
                             <td>{{ $b->nim }}</td>
-                            <td>
-                            {{ $b->penguji}}
-                            </td>
+                          
                             <td>
                             {{ date('d F Y', strtotime($b->tanggal_mulai)) }}</td>
                             <td>
@@ -153,16 +147,13 @@
                             <td>
                             <a href="/koor/batas/editBatas/{{$b->id}}" class="btn btn-success" data-toggle="tooltip" title="edit" >Edit</i></a> 
                             </td>
+
                           </tr> 
                         </form>                               
                         @endforeach
                     </tbody>
                 </table>
-            </div>
-                
-    </main>
-
-
+             
 
         
 

@@ -71,8 +71,7 @@
       <main>
         <div class="container-fluid mt-2">
             <h2><i class="fas fa-file mr-2"></i>Pengajuan Surat Keterangan</h2><hr>
-            <h4><i class="fas fa-file mr-2"></i>Pastikan Data Anda Benar,Sebelum Di Save</h4><hr>
-
+          
             <!-- Form -->
             <div class="row container-fluid">
             <div class="col-md-6">

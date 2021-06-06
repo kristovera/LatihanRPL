@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\KoorController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,11 +44,20 @@ Route::group(['middleware' =>'mhs'] , function() {
     Route::get('/mhs/home', [MahasiswaController::class,'home']);
     Route::get('/layanan/suratketerangan/simpanSKP', [MahasiswaController::class,'simpanSKP']);
     Route::get('/layanan/kp', [MahasiswaController::class,'formKP']);
+    //Route::get('/layanan/kp/simpan', [MahasiswaController::class,'formKP']);
     Route::get('/layanan/praKp', [MahasiswaController::class,'formPraKP']);
     Route::get('/layanan/praKp/simpanPraKp', [MahasiswaController::class,'simpanPraKp']);
-    //Route::get('/layanan/kp/simpanKP', [MahasiswaController::class,'simpanKP']);
+    Route::get('/layanan/kp/simpanKP', [MahasiswaController::class,'simpanKP']);
    // Route::get('/layanan/ujianKP', [MahasiswaController::class ,'ujianKP']);
     Route::get('/contact', [contactController::class,'index']);
+    Route::get('/layanan/ujianKP', [MahasiswaController::class,'ujianKp']);
+    Route::get('/layanan/ujianKP/search', [MahasiswaController::class,'searchM']);
+    Route::get('/layanan/verifKp', [MahasiswaController::class,'verifKP']);
+    Route::get('/mhs/verifKp/search', [MahasiswaController::class,'searchKP']);
+    Route::get('/layanan/verifSK', [MahasiswaController::class,'verifSK']);
+    Route::get('/layanan/verifPra', [MahasiswaController::class,'verifPra']);
+    Route::get('/mhs/verifSK/search', [MahasiswaController::class,'searchSK']);
+    Route::get('/mhs/verifPra/search', [MahasiswaController::class,'searchPra']);
 
     
 
@@ -66,6 +76,9 @@ Route::group(['middleware' =>'mhs'] , function() {
     Route::get('/dosen/jadwalUjian', [DosenController::class,'jadwalujian']);
     Route::get('/dosen/jadwalUjian/editUjian/{id}', [DosenController::class,'editUjian']);
     Route::put('/dosen/jadwalUjian/updated/{id}', [DosenController::class,'updateUjian']);
+   // Route::get('/search', [DosenController::class, 'search'])->name('search');
+    Route::get('/dosen/daftarBimb/search', [DosenController::class,'searchD']);
+
   
 
 
@@ -96,10 +109,11 @@ Route::group(['middleware' =>'mhs'] , function() {
     Route::get('/koor/verifikasiKp',[KoorController::class,'formKP']);
     Route::get('/koor/verifikasiKp/editKp/{id}',[KoorController::class,'editKP']);
     Route::put('/koor/verifikasiKp/updated/{id}',[KoorController::class,'updateKP']);
-   
 
+   //Route::get('/koor/opensurat/{id}',[KoorController::class,'fileKp']);
 
-   
+    Route::get('/koor/verifikasiKp/{id}',[KoorController::class,'file']);
+
 
     Route::get('/koor/ViewUjian', [KoorController::class,'formUjian']);
     Route::get('/koor/ViewUjian/editUjian/{id}', [KoorController::class,'editUjian']);

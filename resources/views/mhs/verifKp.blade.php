@@ -38,56 +38,72 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                       
-                        <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Layanan
-            </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/layanan/suratketerangan">Pengajuan Surat Keterangan</a>
-                <a class="dropdown-item" href="/layanan/prakp">Pengajuan Pra Kp</a>
-                <a class="dropdown-item" href="/layanan/kp">Pengajuan Kp</a>
-                <a class="dropdown-item" href="/layanan/ujianKP">Jadwal Ujian</a>
-            </div>
-           
-            </div>
+                      
+            </div>    
+                </div>
         </nav>
-    </header>
+    
+           <form class="form-inline my-2 my-lg-0 ml-auto" method="GET" action="/mhs/verifKp/search">
+                        <h4 class="mt-2 mr-3 text-muted">Search</h4>
+                        <input class="form-control mr-sm-2" type="search" name="q" value="@php echo old('cari') @endphp"  placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" data-toggle="tooltip" title="Search">Cari<i class="fas fa-search" ></i></button>
+                    </form>
+                    </br>
+                    </br>
+</header>
 
-      <!-- Main Content -->
-      <main>
-        <div class="container-fluid mt-2">
-            <h2><i class="fas fa-calendar-alt mr-2"></i>Daftar Jadwal Ujian KP</h2>
 
-            <!-- Form -->
-            <div class="container-fluid">
-                <table class="table table-striped">
-                    <thead>
-                      <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Tgl Ujian</th>
-                        <th scope="col">Ruang</th>
-                        <th scope="col">NIM</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">Judul</th>
-                        <th scope="col">Dosen Penguji</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>14 April 2020</td>
-                        <td>C.2.7</td>
-                        <td>72170210</td>
-                        <td>Mahasiswa</td>
-                        <td>KP</td>
-                        <td>Dosen Penguji</td>
-                      </tr>
+    
+                    <h4>Daftar Pengajuan KP</h4><hr>
+                    <table class="table table-hover">
+                   
+                          <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Nim</th>
+                            <th scope="col">Judul KP</th>
+                            <th scope="col">Penguji</th>
+                            <th scope="col">Tahun</th>
+                            <th scope="col">Pembimbing</th>
+                            <th scope="col">Status</th>
+                            
+                          </tr>
+                      
+                        <tbody>
+
+                        @foreach($kp as $no=> $kp )
+                 <tr>
+                        <th scope="row"><?php echo ++$no ?></th>
+                        <td>{{ $kp->nim}}</td>
+                        <td>{{ $kp->judul_kp }}</td>
+                        <td>{{ $kp->penguji }}</td>
+                        <td>{{ $kp->tahun}}</td>
+                      
+                       <td>
+                                {{$kp->pembimbing}}
+                                       
+                                </td>
+                        <td>
+                                {{$kp->status }}
+                                       
+                                </td>
+                       
+                       
+                          
+                            
+                                              
+                        </td>
+                        </tr>
                     </tbody>
-                  </table>
-            </div>
-                
-    </main>
+                    @endforeach
+                    </table>      
+         
+     
+  
+        <!-- End Pagination -->
+    </div>
 
+
+  
 
 
     <!-- Optional JavaScript -->

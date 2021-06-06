@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Ujian1;
+use App\Models\kp;
 
 class KoorController extends Controller
 {
@@ -30,6 +31,7 @@ class KoorController extends Controller
         'penguji'=>$request->penguji,
         'tahun'=> $request->tahun,
         'dokumen'=> $request->dokumen,
+        'pembimbing'=> $request->pembimbing,
         'status'=>$request->status
        
         ]);
@@ -159,15 +161,11 @@ public function simpanUjian(Request $request){
 
 
 ////BATAS
-    public function formBatas(){
-    $bt = DB::table('batas')->get();
-    return view('koor.batas', ['bt' => $bt]);
-}
-
+  
 public function simpanBatas(Request $request){
     DB::table('Batas')->insert([
         'nim' => $request->nim,
-        'penguji'=>$request->penguji,
+      
         'tanggal_mulai'=> $request->tanggal_mulai,
         'tanggal_akhir' => $request->tanggal_akhir,
         
@@ -175,14 +173,15 @@ public function simpanBatas(Request $request){
     return redirect('/koor/batas')->with('success','Tersimpan');
 
 }
+
   public function updateBatas($id, Request $request) {
   
     DB::table('batas')->where('id',$id)
     ->update([
-    'nim'=>$request->nim,
-    'penguji'=>$request->penguji,
-    'tanggal_mulai'=>$request->tanggal_mulai,
-    'tanggal_akhir'=> $request->tanggal_akhir
+        'nim' => $request->nim,
+      
+        'tanggal_mulai'=> $request->tanggal_mulai,
+        'tanggal_akhir' => $request->tanggal_akhir,
    
     ]);
     return redirect('koor/batas')->with('status', 'Berhasil diupdate!');
@@ -194,10 +193,44 @@ public function editBatas($id) {
   
 }
 
+//FILE
 
-   
-   
+public function fileKP($id)
+{
+    $path = public_path ('storage/' .$id );
+    header("content-type: application/pdf");
+    header("content-length: " .filesize($path));
+    readfile($path);
+}
 
+public function file(Request $request)
+{
+    $path = $request->file('dokumen');
+    $input=$request->all();
+    $input['dokumen']=$path; //gambar dari field database
+    pengajuan_kp::create($input);
+    return redirect('/verifikasiKp');
+}
+public function batas()
+{
+   	     // mengambil data dari table pegawai
+		$bt = DB::table('batas')->paginate(10);
+ 
+    	     // mengirim data pegawai ke view index
+		return view('koor.batas',['bt' => $bt]);
+ 
+}
+
+    public function formBatas(){
+    $bt = DB::table('batas')->get(); 
+    return view('koor.batas', ['bt' => $bt]);
+
+    }
+    public function page(){
+    $bt= batas::paginate(5);
+    return view('koor.batas', ['bt' => $bt]);
+    }
+  
 
 
 

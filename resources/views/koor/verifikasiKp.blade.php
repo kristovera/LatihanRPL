@@ -72,7 +72,7 @@
                 </div>
         </nav>
     </header>
-
+  
 
     
                     <h4>Daftar Pengajuan KP</h4><hr>
@@ -85,6 +85,7 @@
                             <th scope="col">Penguji</th>
                             <th scope="col">Tahun</th>
                             <th scope="col">Dokumen</th>
+                            <th scope="col">Pembimbing</th>
                             <th scope="col">Status</th>
                             <th scope="col">Action</th>
                           </tr>
@@ -98,15 +99,20 @@
                         <td>{{ $kp->judul_kp }}</td>
                         <td>{{ $kp->penguji }}</td>
                         <td>{{ $kp->tahun}}</td>
-                        <td>{{ $kp->dokumen}}</td>
+                       <td > <a href="/koor/verifikasiKp/{{ $kp->id }} " class="btn btn-primary" target="_blank" >Open File</i></a> </td>
+                       <td>
+                                {{$kp->pembimbing}}
+                                       
+                                </td>
                         <td>
                                 {{$kp->status }}
                                        
                                 </td>
                        
                         <td>
-                            <a href="/koor/verifikasiKp/editKp/{{ $kp->id }}" class="btn btn-success" data-toggle="tooltip" >Edit</i></a> 
+                            <a href="/koor/verifikasiKp/editKp/{{ $kp->id }}" class="btn btn-success" data-toggle="tooltip" >Edit</i></a>
                           
+                            
                                               
                         </td>
                         </tr>

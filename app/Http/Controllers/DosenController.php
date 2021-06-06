@@ -54,6 +54,12 @@ class DosenController extends Controller
 
 }
 
+public function searchD(Request $request) {
+    $cari = $request->q;
+    $kp= DB::table('kp1')->where('penguji','like',"%".$cari."%")
+    ->paginate();
+    return view('dosen.daftarBimb',['kp' => $kp]);
+}
 
 
     
