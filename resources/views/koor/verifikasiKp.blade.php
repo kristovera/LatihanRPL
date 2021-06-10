@@ -99,7 +99,8 @@
                         <td>{{ $kp->judul_kp }}</td>
                         <td>{{ $kp->penguji }}</td>
                         <td>{{ $kp->tahun}}</td>
-                       <td > <a href="/koor/verifikasiKp/{{ $kp->id }} " class="btn btn-primary" target="_blank" >Open File</i></a> </td>
+                      <td>
+                      {{ $kp->dokumen}} </td>
                        <td>
                                 {{$kp->pembimbing}}
                                        
@@ -111,7 +112,7 @@
                        
                         <td>
                             <a href="/koor/verifikasiKp/editKp/{{ $kp->id }}" class="btn btn-success" data-toggle="tooltip" >Edit</i></a>
-                          
+                           
                             
                                               
                         </td>

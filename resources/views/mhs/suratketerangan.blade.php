@@ -1,4 +1,4 @@
-<doctype html>
+<!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -6,8 +6,6 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>Surat Keterangan</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -26,52 +24,30 @@
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 <body>
-
-    <!-- Navigasi -->
-    <header>
-    <nav class="navbar navbar-dark navbar-expand-lg  bg-dark">
-            <div class="container-fluid">
-            <a class="navbar-brand font-weight-bold text-white" href="/mhs/home">Home</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-        
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-              
-                </li>
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Layanan
+    <div id="app">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="/mhs/home">
+                  Home
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/layanan/suratketerangan">Pengajuan Surat Keterangan</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/layanan/praKp">Pengajuan Pra KP</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/layanan/kp">Pengajuan KP</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/layanan/ujianKP">Jadwal Ujian</a>
-                  
-                </div>
-            </ul>
-            <form class="form-inline my-2 my-lg-0 ml-auto">
-               
-                <a href="/mhs/usermhs" class="btn text-white"><i class="fas fa-user" data-toggle="tooltip" title="User Profile"></i></a> 
-                <a href="" class="btn text-white"><i class="fas fa-sign-out-alt" data-toggle="tooltip" title="Logout"></i></a> 
-                
-            </form>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+         
+          
             </div>
             </div>
         </nav>
     </header>
 
       <!-- Main Content -->
+      <!-- Main Content -->
       <main>
         <div class="container-fluid mt-2">
             <h2><i class="fas fa-file mr-2"></i>Pengajuan Surat Keterangan</h2><hr>
-          
+       
+
             <!-- Form -->
             <div class="row container-fluid">
             <div class="col-md-6">

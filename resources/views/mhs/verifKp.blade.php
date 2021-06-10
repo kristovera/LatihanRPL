@@ -42,6 +42,7 @@
             </div>    
                 </div>
         </nav>
+        </br>
     
            <form class="form-inline my-2 my-lg-0 ml-auto" method="GET" action="/mhs/verifKp/search">
                         <h4 class="mt-2 mr-3 text-muted">Search</h4>

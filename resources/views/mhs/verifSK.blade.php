@@ -33,6 +33,8 @@
             </div>    
                 </div>
         </nav>
+        </br>
+    
         <form class="form-inline my-2 my-lg-0 ml-auto" method="GET" action="/mhs/verifSK/search">
                         <h4 class="mt-2 mr-3 text-muted">Search</h4>
                         <input class="form-control mr-sm-2" type="search" name="q" value="@php echo old('cari') @endphp"  placeholder="Search" aria-label="Search">

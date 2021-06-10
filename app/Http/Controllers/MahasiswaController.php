@@ -55,8 +55,9 @@ class MahasiswaController extends Controller
             'pimpinan'=>$request->pimpinan,
             'alamat'=>$request->alamat,
             'notelp'=>$request->notelp,
-
             'status' => 0
+
+            
         ]);
         return redirect('/layanan/praKp')->with('success','Tersimpan');
     }

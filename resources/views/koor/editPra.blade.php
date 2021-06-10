@@ -49,11 +49,11 @@
                             <label for="" class="font-weight-bold">Tahun</label>
                             <input type="text" class="form-control" name="tahun" id="tahun"value="{{ $p->tahun }}" readonly >
                         </div>
-                        <div class="form-group">
-                          <label for="" class="font-weight-bold">Dokumen</label>
-                          <input type="file" class="form-control" name="dokumen" id="dokumen" required='required' multiple >
-                         <p style="color: red">Format File yang Diperbolehkan png | pdf </p>
-                          </div>
+                        <form  method="post" enctype="multipart/form-data">    
+                    <div class="form-group">
+                    <label for="" class="font-weight-bold">Dokumen</label>
+                    <input type="text" class="form-control" name="dokumen" id="dokumen" required='required' value="{{ $p->dokumen}}" readonly>
+                    </div>
 
                       
                         <div class="form-group">

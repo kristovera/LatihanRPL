@@ -28,26 +28,7 @@
             <span class="navbar-toggler-icon"></span>
             </button>
         
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-              
-                </li>
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Layanan
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/layanan/suratketerangan">Pengajuan Surat Keterangan</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/layanan/prakp">Pengajuan Pra KP</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/layanan/kp">Pengajuan KP</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/layanan/ujianKP">Jadwal Ujian</a>
-                 
-                </div>
-            </ul>
+           
           
             </div>
             </div>
@@ -58,7 +39,7 @@
       <main>
         <div class="container-fluid mt-2">
             <h2><i class="fas fa-file mr-2"></i>Pengajuan Pra KP</h2><hr>
-           
+         
 
             <!-- Form -->
             <div class="row container-fluid">
@@ -69,7 +50,7 @@
                                 <p>{{ \Session::get('success') }}</p>
                             </div>
                         @endif
-                    <form method="GET" action="/layanan/praKp/simpanPraKp">
+                    <form method="GET" action="/layanan/praKp/simpanPraKP">
                         @csrf
                      
                         <div class="form-group">
@@ -127,17 +108,22 @@
                             <input type="text" class="form-control" name="notelp" id="notelp"  >
                         </div>
                             
-                            
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                    
+                        <button  class="btn btn-primary" onclick="myFunction()">Submit</button>
+
+                        <script>
+                            function myFunction() {
+                            confirm("Yakin Di Simpan ? ");
+                                            }
+                        </script>
                     </form>
                     </div>
-               
+
+
                 </div>
             </div>
             <br>
     </main>
-
-  
 
 
     <!-- Optional JavaScript -->

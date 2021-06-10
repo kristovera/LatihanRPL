@@ -45,10 +45,13 @@ Route::group(['middleware' =>'mhs'] , function() {
     Route::get('/layanan/suratketerangan/simpanSKP', [MahasiswaController::class,'simpanSKP']);
     Route::get('/layanan/kp', [MahasiswaController::class,'formKP']);
     //Route::get('/layanan/kp/simpan', [MahasiswaController::class,'formKP']);
+
     Route::get('/layanan/praKp', [MahasiswaController::class,'formPraKP']);
-    Route::get('/layanan/praKp/simpanPraKp', [MahasiswaController::class,'simpanPraKp']);
+  Route::get('/layanan/praKp/simpanPraKP', [MahasiswaController::class,'simpanPraKP']);
+   // Route::get('/layanan/praKp/simPraKP', [MahasiswaController::class,'simPraKP']);
     Route::get('/layanan/kp/simpanKP', [MahasiswaController::class,'simpanKP']);
    // Route::get('/layanan/ujianKP', [MahasiswaController::class ,'ujianKP']);
+
     Route::get('/contact', [contactController::class,'index']);
     Route::get('/layanan/ujianKP', [MahasiswaController::class,'ujianKp']);
     Route::get('/layanan/ujianKP/search', [MahasiswaController::class,'searchM']);
@@ -112,7 +115,8 @@ Route::group(['middleware' =>'mhs'] , function() {
 
    //Route::get('/koor/opensurat/{id}',[KoorController::class,'fileKp']);
 
-    Route::get('/koor/verifikasiKp/{id}',[KoorController::class,'file']);
+  // Route::get('/koor/verifikasiKp/{dokumen}',[KoorController::class,'fileKP']);
+   // Route::get('/koor/verifikasiKp/{dokumen}',[KoorController::class,'file']);
 
 
     Route::get('/koor/ViewUjian', [KoorController::class,'formUjian']);

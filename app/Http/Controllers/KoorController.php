@@ -195,9 +195,9 @@ public function editBatas($id) {
 
 //FILE
 
-public function fileKP($id)
+public function fileKP($dokumen)
 {
-    $path = public_path ('storage/' .$id );
+    $path = public_path ('dokumen/' .$dokumen);
     header("content-type: application/pdf");
     header("content-length: " .filesize($path));
     readfile($path);
@@ -209,7 +209,7 @@ public function file(Request $request)
     $input=$request->all();
     $input['dokumen']=$path; //gambar dari field database
     pengajuan_kp::create($input);
-    return redirect('/verifikasiKp');
+    return redirect('/koor/verifikasiKp');
 }
 public function batas()
 {

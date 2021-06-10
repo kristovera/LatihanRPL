@@ -44,7 +44,7 @@
             </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="/layanan/suratketerangan">Pengajuan Surat Keterangan</a>
-                <a class="dropdown-item" href="/layanan/prakp">Pengajuan Pra Kp</a>
+                <a class="dropdown-item" href="/layanan/praKp">Pengajuan Pra Kp</a>
                 <a class="dropdown-item" href="/layanan/kp">Pengajuan Kp</a>
                 <a class="dropdown-item" href="/layanan/ujianKP">Jadwal Ujian</a>
                 <a class="dropdown-item" href="/layanan/verifKp">Verifikasi Kp</a>

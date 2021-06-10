@@ -85,7 +85,7 @@
                         <th scope="col">Nim</th>
                         <th scope="col">Penguji</th>
                         <th scope="col">Tanggal Mulai</th>
-                        <th scope="col">Tahun Akhir</th>
+                        <th scope="col">Tanggal Akhir</th>
                       
                       </tr>
                     </thead>
